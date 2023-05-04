@@ -1,0 +1,5 @@
+mất 3 dòng đầu ở xử lý chính
+Đảo state sang cuối
+cms cột id card ở cột AB
+Tắt thông báo lỗi ở cms
+phần mềm thái sơn: đẩy tờ khai lên hải quan 
