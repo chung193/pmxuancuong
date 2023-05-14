@@ -1,3 +1,3 @@
-192.168.1.54
-xuancuong
+192.168.1.20
+xuancuong_app
 123123
