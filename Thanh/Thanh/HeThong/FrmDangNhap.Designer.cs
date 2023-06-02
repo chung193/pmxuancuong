@@ -121,11 +121,11 @@
             // lbTrangThai
             // 
             this.lbTrangThai.AutoSize = true;
-            this.lbTrangThai.Font = new System.Drawing.Font("Merriweather Sans", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTrangThai.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbTrangThai.Location = new System.Drawing.Point(328, 453);
             this.lbTrangThai.Name = "lbTrangThai";
-            this.lbTrangThai.Size = new System.Drawing.Size(44, 69);
+            this.lbTrangThai.Size = new System.Drawing.Size(35, 51);
             this.lbTrangThai.TabIndex = 7;
             this.lbTrangThai.Text = ".";
             // 
