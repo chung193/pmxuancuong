@@ -159,5 +159,76 @@ namespace Thanh.HeThong
         {
             loadForm(new FrmTenThayThe());
         }
+
+        /// <summary>
+        ///  re add control (devextreme expire)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new frmQuanTriNguoiDung());
+        }
+
+        private void ho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void i_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmQuanLyFileKeyTaiLen());
+        }
+
+        private void barButtonItem6_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+            loadForm(new FrmQuanLyFileKey());
+        }
+
+        private void barButtonItem7_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmQuanLyNhanHieu());
+        }
+
+        private void barButtonItem8_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmFileNhanHieu());
+        }
+
+        private void barButtonItem9_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmNguoiDungFake());
+        }
+
+        private void barButtonItem10_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new frmThanhPho());
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmTenThayThe());
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmXuLyChinh());
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmXuLyMoRong());
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmFileKey());
+        }
+
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadForm(new FrmNhanHieu());
+        }
     }
 }
