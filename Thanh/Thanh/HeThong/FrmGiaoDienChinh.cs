@@ -36,12 +36,6 @@ namespace Thanh.HeThong
             f.Show();
         }
 
-        private void tsmQuanTriNguoiDung_Click(object sender, EventArgs e)
-        {
-            // flpChinh.Controls.Add(frmQuanTriNguoiDung);
-            loadForm(new frmQuanTriNguoiDung());
-        }
-
         private void FrmGiaoDienChinh_Load(object sender, EventArgs e)
         {
             String quyen =  DungChung.dtNguoidung.Rows[0][2].ToString();
@@ -51,184 +45,71 @@ namespace Thanh.HeThong
             }
         }
 
-        private void tsmDangXuat_Click(object sender, EventArgs e)
+        private void panelThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();   
         }
 
-        private void tsmTaiLenFileTuKhoa_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmQuanLyFileKey());
-        }
-
-        private void tsmFileKey_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmFileKey());
-        }
-
-        private void danhSáchFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmQuanLyFileKeyTaiLen());
-        }
-
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmNhanHieu());
-        }
-
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmQuanLyNhanHieu());
-        }
-
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmFileNhanHieu());
-        }
-
-        private void toolStripMenuItem7_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmXuLyChinh());
-        }
-
-        private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelNguoiDung_Click(object sender, EventArgs e)
         {
             loadForm(new frmQuanTriNguoiDung());
         }
 
-        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
 
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            
-            loadForm(new FrmQuanLyFileKey());
-        }
-
-        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelUploadKey_Click(object sender, EventArgs e)
         {
             loadForm(new FrmFileKey());
         }
 
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmQuanLyFileKeyTaiLen());
-        }
-
-        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelQLKey_Click(object sender, EventArgs e)
         {
            
-            loadForm(new FrmQuanLyNhanHieu());
-        }
-
-        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmNhanHieu());
-        }
-
-        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            // loadForm(new FrmQuanLyNhanHieu());
-           
-            loadForm(new FrmFileNhanHieu());
-        }
-
-        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmXuLyChinh());
-        }
-
-        private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmXuLyMoRong());
-        }
-
-        private void bbtnTinhThanhPho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new frmThanhPho());
-        }
-
-        private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmNguoiDungFake());
-        }
-
-        private void bbtTenThayThe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmTenThayThe());
-        }
-
-        /// <summary>
-        ///  re add control (devextreme expire)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new frmQuanTriNguoiDung());
-        }
-
-        private void ho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void i_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmQuanLyFileKeyTaiLen());
-        }
-
-        private void barButtonItem6_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            
             loadForm(new FrmQuanLyFileKey());
         }
 
-        private void barButtonItem7_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelQLFileKey_Click(object sender, EventArgs e)
         {
-            loadForm(new FrmQuanLyNhanHieu());
+            loadForm(new FrmQuanLyFileKeyTaiLen());
         }
 
-        private void barButtonItem8_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelUploadFile_Click(object sender, EventArgs e)
         {
             loadForm(new FrmFileNhanHieu());
         }
 
-        private void barButtonItem9_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void ribbonPanel1_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmNhanHieu());
+        }
+
+        private void panelNhanHieu_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmQuanLyNhanHieu());
+        }
+
+        private void panelNguoiDungFake_Click(object sender, EventArgs e)
         {
             loadForm(new FrmNguoiDungFake());
         }
 
-        private void barButtonItem10_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelThanhPho_Click(object sender, EventArgs e)
         {
             loadForm(new frmThanhPho());
         }
 
-        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelTenThayThe_Click(object sender, EventArgs e)
         {
             loadForm(new FrmTenThayThe());
         }
 
-        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelDichLoc_Click(object sender, EventArgs e)
         {
             loadForm(new FrmXuLyChinh());
         }
 
-        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void panelXuLy_Click(object sender, EventArgs e)
         {
             loadForm(new FrmXuLyMoRong());
-        }
-
-        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmFileKey());
-        }
-
-        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            loadForm(new FrmNhanHieu());
         }
     }
 }

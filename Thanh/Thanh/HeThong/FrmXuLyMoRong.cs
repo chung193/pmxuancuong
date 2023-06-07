@@ -1,8 +1,4 @@
-﻿using DevExpress.Internal.WinApi.Windows.UI.Notifications;
-using DevExpress.Utils;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraEditors.Filtering.Templates;
-using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

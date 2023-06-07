@@ -165,18 +165,6 @@ namespace Thanh.ThuVien
                 return a;
             }
         }
-        //public string getRow(string name)
-        //{
-        //    string sql = "select *  from tb_tenthaythe where name = N'" + name + "'";
-        //    string a = LenhLayKq(sql);
-        //    if (string.Equals(a, ""))
-        //    {
-        //        return name;
-        //    }
-        //    else
-        //    {
-        //        return a;
-        //    }
-        //}
+
     }
 }

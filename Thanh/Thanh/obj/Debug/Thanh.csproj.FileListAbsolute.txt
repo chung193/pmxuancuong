@@ -140,3 +140,13 @@ F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmXuLyMoRong.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.Properties.Resources.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.csproj.GenerateResource.cache
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.exe.licenses
+F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\Thanh.exe.config
+F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\Thanh.exe
+F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\Thanh.pdb
+F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\System.Windows.Forms.Ribbon.dll
+F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.csproj.CoreCompileInputs.cache
+F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.csproj.CopyComplete
+F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.exe
+F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.pdb
+F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\EPPlus.dll
+F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\EPPlus.xml

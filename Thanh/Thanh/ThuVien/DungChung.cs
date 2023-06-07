@@ -1,7 +1,5 @@
-﻿using DevExpress.Utils.Text;
-using DevExpress.XtraBars.Docking;
-using DevExpress.XtraEditors.SyntaxEditor;
-using Microsoft.Office.Interop.Excel;
+﻿
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -165,16 +163,34 @@ namespace Thanh.ThuVien
         /// <returns>Lấy dữ liệu từ file Exel với tên sheet truyền vào</returns>
         public static System.Data.DataTable LayDL(string sheetname, string filePath)
         {
-            string kn = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source = '" + filePath + "';Extended Properties=\"Excel 12.0;HDR=YES;\"";
-            using (OleDbConnection conn = new OleDbConnection(kn))
+            bool hasHeader = true;
+            using (var pck = new OfficeOpenXml.ExcelPackage())
             {
-                conn.Open();
+                using (var stream = File.OpenRead(filePath))
+                {
+                    pck.Load(stream);
+                }
+                var ws = pck.Workbook.Worksheets.First();
+                DataTable tbl = new DataTable();
+                foreach (var firstRowCell in ws.Cells[1, 1, 1, ws.Dimension.End.Column])
+                {
+                    tbl.Columns.Add(hasHeader ? firstRowCell.Text : string.Format("Column {0}", firstRowCell.Start.Column));
+                }
+                var startRow = hasHeader ? 2 : 1;
+                for (int rowNum = startRow; rowNum <= ws.Dimension.End.Row; rowNum++)
+                {
+                    var modelTable1 = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
+                    if (modelTable1.Style.Border.Right.Style == OfficeOpenXml.Style.ExcelBorderStyle.None)
+                        break;
 
-                OleDbDataAdapter objDA = new System.Data.OleDb.OleDbDataAdapter("select *from [" + sheetname + "]", conn);
-                System.Data.DataTable tb = new System.Data.DataTable();
-                objDA.Fill(tb);
-                //dgDulieuExcel.DataSource = null;
-                return tb;
+                    var wsRow = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
+                    DataRow row = tbl.Rows.Add();
+                    foreach (var cell in wsRow)
+                    {
+                        row[cell.Start.Column - 1] = cell.Text;
+                    }
+                }
+                return tbl;
             }
         }
 
@@ -242,62 +258,16 @@ namespace Thanh.ThuVien
         /// <returns>Lấy danh sách các sheet name</returns>
         public static String[] LaySheet(string excelFile)
         {
-            OleDbConnection objConn = null;
-            System.Data.DataTable dt = null;
 
-            try
+            FileInfo fileInfo = new FileInfo(excelFile);
+            var excel = new ExcelPackage(fileInfo);
+            List<string> list = new List<string>();
+            foreach (var worksheet in excel.Workbook.Worksheets)
             {
-                // Connection String. Change the excel file to the file you
-                // will search.
-                String connString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source = '" + excelFile + "';Extended Properties=\"Excel 12.0;HDR=YES;\"";
-                // Create connection object by using the preceding connection string.
-                objConn = new OleDbConnection(connString);
-                // Open connection with the database.
-                objConn.Open();
-                // Get the data table containg the schema guid.
-                dt = objConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-
-                if (dt == null)
-                {
-                    return null;
-                }
-
-                String[] excelSheets = new String[dt.Rows.Count];
-                int i = 0;
-
-                // Add the sheet name to the string array.
-                foreach (DataRow row in dt.Rows)
-                {
-                    excelSheets[i] = row["TABLE_NAME"].ToString();
-                    i++;
-                }
-
-                // Loop through all of the sheets if you want too...
-                for (int j = 0; j < excelSheets.Length; j++)
-                {
-                    // Query each excel sheet.
-                    //MessageBox.Show("excel sheet");
-                }
-
-                return excelSheets;
+                list.Add(worksheet.Name);
             }
-            catch (Exception ex)
-            {
-                return null;
-            }
-            finally
-            {
-                // Clean up.
-                if (objConn != null)
-                {
-                    objConn.Close();
-                    objConn.Dispose();
-                }
-                if (dt != null)
-                {
-                    dt.Dispose();
-                }
-            }
+
+            return list.ToArray();
         }
     }
 }
