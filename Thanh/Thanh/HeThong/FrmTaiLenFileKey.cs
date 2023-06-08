@@ -12,12 +12,12 @@ using Thanh.ThuVien;
 
 namespace Thanh.HeThong
 {
-    public partial class FrmQuanLyFileKeyTaiLen : Form
+    public partial class FrmTaiLenFileKey : Form
     {
         private DataTable dtFileKey;
         private XuLyDuLieu objXldl;
         private String id;
-        public FrmQuanLyFileKeyTaiLen()
+        public FrmTaiLenFileKey()
         {
             InitializeComponent();
             objXldl = new XuLyDuLieu();

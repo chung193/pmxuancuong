@@ -67,17 +67,18 @@ namespace Thanh.HeThong
 
         private void btnKey_Click(object sender, EventArgs e)
         {
-            loadForm(new FrmQuanLyFileKey());
+            loadForm(new FrmQuanLyKey());
         }
 
         private void btnFileKey_Click(object sender, EventArgs e)
         {
-            loadForm(new FrmFileKey());
+            loadForm(new FrmTaiLenFileKey());
         }
 
         private void btnTaiLenFileKey_Click(object sender, EventArgs e)
         {
-            loadForm(new FrmQuanLyFileKeyTaiLen());
+            
+            loadForm(new FrmFileKey());
         }
 
         private void btnNhanHieu_Click(object sender, EventArgs e)

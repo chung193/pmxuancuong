@@ -153,8 +153,6 @@ D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmLoading.resources
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmMiniUpload.resources
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmNguoiDungFake.resources
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmNhanHieu.resources
-D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmQuanLyFileKey.resources
-D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmQuanLyFileKeyTaiLen.resources
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmQuanLyNhanHieu.resources
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.frmQuanTriNguoiDung.resources
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmTenThayThe.resources
@@ -174,3 +172,5 @@ D:\git\pmxuancuong\Thanh\Thanh\bin\Release\System.Windows.Forms.Ribbon.dll
 D:\git\pmxuancuong\Thanh\Thanh\bin\Release\EPPlus.xml
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.csproj.CoreCompileInputs.cache
 D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.csproj.CopyComplete
+D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmQuanLyKey.resources
+D:\git\pmxuancuong\Thanh\Thanh\obj\Release\Thanh.HeThong.FrmTaiLenFileKey.resources

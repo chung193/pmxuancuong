@@ -1,6 +1,6 @@
 ﻿namespace Thanh.HeThong
 {
-    partial class FrmQuanLyFileKeyTaiLen
+    partial class FrmTaiLenFileKey
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuanLyFileKeyTaiLen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaiLenFileKey));
             this.dgvFileTaiLen = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();

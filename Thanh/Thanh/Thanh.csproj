@@ -133,17 +133,17 @@
     <Compile Include="HeThong\FrmNhanHieu.Designer.cs">
       <DependentUpon>FrmNhanHieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeThong\FrmQuanLyFileKey.cs">
+    <Compile Include="HeThong\FrmQuanLyKey.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HeThong\FrmQuanLyFileKey.Designer.cs">
-      <DependentUpon>FrmQuanLyFileKey.cs</DependentUpon>
+    <Compile Include="HeThong\FrmQuanLyKey.Designer.cs">
+      <DependentUpon>FrmQuanLyKey.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeThong\FrmQuanLyFileKeyTaiLen.cs">
+    <Compile Include="HeThong\FrmTaiLenFileKey.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HeThong\FrmQuanLyFileKeyTaiLen.Designer.cs">
-      <DependentUpon>FrmQuanLyFileKeyTaiLen.cs</DependentUpon>
+    <Compile Include="HeThong\FrmTaiLenFileKey.Designer.cs">
+      <DependentUpon>FrmTaiLenFileKey.cs</DependentUpon>
     </Compile>
     <Compile Include="HeThong\FrmQuanLyNhanHieu.cs">
       <SubType>Form</SubType>
@@ -217,11 +217,11 @@
     <EmbeddedResource Include="HeThong\FrmNhanHieu.resx">
       <DependentUpon>FrmNhanHieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\FrmQuanLyFileKey.resx">
-      <DependentUpon>FrmQuanLyFileKey.cs</DependentUpon>
+    <EmbeddedResource Include="HeThong\FrmQuanLyKey.resx">
+      <DependentUpon>FrmQuanLyKey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HeThong\FrmQuanLyFileKeyTaiLen.resx">
-      <DependentUpon>FrmQuanLyFileKeyTaiLen.cs</DependentUpon>
+    <EmbeddedResource Include="HeThong\FrmTaiLenFileKey.resx">
+      <DependentUpon>FrmTaiLenFileKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\FrmQuanLyNhanHieu.resx">
       <DependentUpon>FrmQuanLyNhanHieu.cs</DependentUpon>

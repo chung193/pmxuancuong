@@ -68,6 +68,7 @@ namespace Thanh.ThuVien
             {
                 MoKetNoi();
                 SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.CommandTimeout = 0;
                 var kq = cmd.ExecuteReader();
                 if (kq.HasRows)
                 {
@@ -91,6 +92,7 @@ namespace Thanh.ThuVien
             {
                 MoKetNoi();
                 SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.CommandTimeout = 0;
                 kq = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -113,6 +115,7 @@ namespace Thanh.ThuVien
                 loi = "";
                 MoKetNoi();
                 SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.CommandTimeout = 0;
                 object a = cmd.ExecuteScalar();
                 if (a != null)
                     kq = int.Parse(a.ToString());
@@ -136,6 +139,7 @@ namespace Thanh.ThuVien
                 loi = "";
                 MoKetNoi();
                 SqlCommand cmd = new SqlCommand(strSql, conn);
+                cmd.CommandTimeout = 0;
                 object a = cmd.ExecuteScalar();
                 if (a != null)
                     kq = a.ToString();

@@ -1,23 +1,25 @@
-﻿using System;
+﻿using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Thanh.ThuVien;
 
 namespace Thanh.HeThong
 {
-    public partial class FrmQuanLyFileKey : Form
+    public partial class FrmQuanLyKey : Form
     {
         private XuLyDuLieu objXldl;
         private DataTable dtKey;
         private int cheDo;
         private String id;
-        public FrmQuanLyFileKey()
+        public FrmQuanLyKey()
         {
             InitializeComponent();
             objXldl = new XuLyDuLieu();
@@ -66,7 +68,7 @@ namespace Thanh.HeThong
             }
         }
 
-        public void HienThiFileKey()
+        public async Task HienThiFileKey()
         {
             objXldl.MoKetNoi();
             dtKey = objXldl.LayDt("Select id, [key], convertname, unit, classify, classifytype, material, materialcall, brand From tb_key");
@@ -124,14 +126,30 @@ namespace Thanh.HeThong
             txtUnit.Focus();
         }
 
-        private void FrmQuanLyFileKey_Load(object sender, EventArgs e)
+        private async void FrmQuanLyFileKey_Load(object sender, EventArgs e)
         {
-            HienThiFileKey();
+
+            //HienThiFileKey();
+            //Thread getDataThread = new Thread(new ThreadStart(ThietLapTTCacControl));
+            //Thread getTotalThread = new Thread(new ThreadStart(LayTong));
+
+            //getDataThread.IsBackground = true;
+            //getTotalThread.IsBackground = true;
+            //getDataThread.Start();
+            //getTotalThread.Start();
+            //ThietLapTTCacControl();
+            //LayTong();
+
+            loadingBox.Visible = true;
+            await HienThiFileKey();
+            await LayTong();
             ThietLapTTCacControl();
-            LayTong();
+            loadingBox.Visible = false;
         }
 
-        private void LayTong()
+        
+
+        private async Task LayTong()
         {
             String strSql = "SELECT count(id) as total  FROM [thanh].[dbo].[tb_key]";
             XuLyDuLieu XLDL = new XuLyDuLieu();
