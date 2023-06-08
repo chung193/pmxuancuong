@@ -140,18 +140,16 @@ namespace Thanh.HeThong
             //ThietLapTTCacControl();
             //LayTong();
 
-            loadingBox.Visible = true;
             await HienThiFileKey();
             await LayTong();
             ThietLapTTCacControl();
-            loadingBox.Visible = false;
         }
 
         
 
         private async Task LayTong()
         {
-            String strSql = "SELECT count(id) as total  FROM [thanh].[dbo].[tb_key]";
+            String strSql = "SELECT count(id) as total  FROM tb_key";
             XuLyDuLieu XLDL = new XuLyDuLieu();
             int total = XLDL.LenhVoHuong(strSql);
             txtTotal.Text = total.ToString();
@@ -283,6 +281,11 @@ namespace Thanh.HeThong
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void GP_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

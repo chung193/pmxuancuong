@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
+using static System.Windows.Forms.RibbonHelpers.WinApi;
 
 namespace Thanh.ThuVien
 {
@@ -51,8 +52,9 @@ namespace Thanh.ThuVien
                 {
                     case "ola":
                         // với ola , cột tổng là tổng trọng lượng và trị giá
-                        totalWeight += Convert.ToDouble(dataTable.AsEnumerable().Sum(x => x.Field<int>(3)));
-                        totalPrice += Convert.ToDouble(dataTable.AsEnumerable().Sum(x => x.Field<int>(3)));
+                        //totalWeight = Double.Parse(dataTable.Compute("Sum([TRỌNG LƯỢNG])", string.Empty).ToString());
+                        //totalPrice = Double.Parse(dataTable.Compute("Sum([TRỊ GIÁ])", string.Empty).ToString());
+                        object sum = dataTable.Compute("Sum((Convert([TRỌNG LƯỢNG], 'System.Int32'))", "[TRỌNG LƯỢNG] IS NOT NULL");
 
                         break;
                     case "cms":

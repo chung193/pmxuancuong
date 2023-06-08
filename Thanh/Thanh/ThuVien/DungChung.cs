@@ -161,9 +161,8 @@ namespace Thanh.ThuVien
         /// <param name="sheetname"></param>
         /// <param name="filePath"></param>
         /// <returns>Lấy dữ liệu từ file Exel với tên sheet truyền vào</returns>
-        public static System.Data.DataTable LayDL(string sheetname, string filePath)
+        public static System.Data.DataTable LayDL(string sheetname, string filePath, bool hasHeader = true)
         {
-            bool hasHeader = true;
             using (var pck = new OfficeOpenXml.ExcelPackage())
             {
                 using (var stream = File.OpenRead(filePath))
@@ -246,6 +245,15 @@ namespace Thanh.ThuVien
                 DataColumn column = new DataColumn();
                 column.ColumnName = columnNameArr[i];
                 column.DataType = System.Type.GetType("System.String");
+                //if (column.ColumnName == "TRỌNG LƯỢNG")
+                //{
+                //    column.DataType = System.Type.GetType("System.Int32)");
+                //}
+                //else
+                //{
+                //    column.DataType = System.Type.GetType("System.String");
+                //}
+                
                 dt.Columns.Add(column);
             }
             return dt;

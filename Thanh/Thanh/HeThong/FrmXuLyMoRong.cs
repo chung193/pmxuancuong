@@ -23,13 +23,14 @@ namespace Thanh.HeThong
         private XuLyDuLieu objXldl;
         private System.Data.DataTable dtNguoiDungfake, dtTrungGian, dtKey, dtBrand, dtExport, dtUpCMS, dtMICChuan;
         private int dem  = 1;
-        private string[] columnName = { "STT","MÃ VẬN ĐƠN", "MÔ TẢ HÀNG HÓA", "KIỆN", "TRỌNG LƯỢNG", "TRỊ GIÁ", "NGƯỜI GỬI", "NGƯỜI NHẬN", "ĐỊA CHỈ NGƯỜI NHẬN", "Ghi Chú" };
+
+        private string[] columnName = { "STT", "MÃ VẬN ĐƠN", "MÔ TẢ HÀNG HÓA", "KIỆN", "TRỌNG LƯỢNG", "TRỊ GIÁ", "NGƯỜI GỬI", "NGƯỜI NHẬN", "ĐỊA CHỈ NGƯỜI NHẬN", "Ghi Chú" };
         private string[] columnNameUpCMS = { "ID Card", "MasterAirWayBill", "FlightNumber", "FlightDate", "LM Tracking", "Product Name 1", "ContentVN", "HSCode", "Currency", "Original quantity", "Declared Value 1", "Parcel Weight(KG)", "Customs Declaration", "Original", "Destination", "Receiver Name", "Receiver Address City", "Receiver Telephone", "Carton No", "Country", "Sender Name", "Sender Address" };
         private string[] columnNameMICChuan = { "MAWB (20)", "HAWB (20)", "CANHAN_TOCHUC(1)", "DIADIEM_LUUKHO(7)", "MAYBAY(12)", "NGAY_DEN(8)", "DIADIEM_DOHANG(5)", "DIADIEM_XEPHANG(5)", "MA_NGUOI NHAP (13)", "TEN_NGUOINHAP (100)", "DIACHI_NHAP (100)", "SDT_NHAP (20)", "Mã Nước_XX", "Tên_NGUOI_XUAT_Khẩu(70)", "DIACHI_XUAT", "Mã bưu chính (7)", "SO_LUONG(6)", "TRONG_LUONG(8)", "Mã phân loại giá hóa đơn (1)", "Mã điều kiện giá hóa đơn(3)", "Mã đồng Tiền của hóa đơn (3)", "Tổng tri giá hóa đơn (20)", "TRI_GIA tính huế(8)", "MO TA_HANG(200)", "Số quản lý nội bộ", "GHI_CHU(100)", "Mã phân loại cước vận chuyển (1)", "Mã iền ệ cước vận chuyển (3)", "Phí vận chuyển (18)", "Mã phân loại bảo hiểm (1)", "Mã iền ệ của iền bảo hiểm (3)", "Phí bảo hiểm (18)" };
 
-        private List<string> replaceName = new List<string>();
-        private List<string> fakeName = new List<string>();
-        private List<int> randomList = new List<int>();
+        //private List<string> replaceName = new List<string>();
+        //private List<string> fakeName = new List<string>();
+        //private List<int> randomList = new List<int>();
         #endregion
 
 
@@ -113,7 +114,7 @@ namespace Thanh.HeThong
         /// <param name="e"></param>
         private void btnCMS_Click(object sender, EventArgs e)
         {
-            if (DungChung.Kieu == null || DungChung.Kieu == null || DungChung.SoMAWB == null || DungChung.ChuyenBay == null || DungChung.NgayDen == null)
+            if (DungChung.Kieu == null || DungChung.SoMAWB == null || DungChung.ChuyenBay == null || DungChung.NgayDen == null)
             {
                 // exportFileUpCMS();
                 MessageBox.Show("Bạn cần điền đẩy đủ thông tin trước");
@@ -159,7 +160,7 @@ namespace Thanh.HeThong
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -391,21 +392,15 @@ namespace Thanh.HeThong
         private System.Data.DataTable dtBangKe(System.Data.DataTable dt)
         {
             System.Data.DataTable dtResult = new System.Data.DataTable();
+            dtResult = DungChung.MakeDataTables(dtResult, columnName);
             try
             {
-                dtResult = DungChung.MakeDataTables(dtResult, columnName);
                 Random random = new Random();
 
                 // xử lý lấy key
-                int clSTT = 1;
+               // int clSTT = 1;
                 for (int i = 0; i < dtTrungGian.Rows.Count; i++)
                 {
-
-                    //Thread t = new Thread(new ThreadStart(() =>
-                    //{
-
-                    //}));
-                    //t.Start();
                     int j = DungChung.TimKiemKey(dtTrungGian.Rows[i]["Product Name 1"].ToString(), dtKey);
                     if (j != -1)
                     {
@@ -413,8 +408,8 @@ namespace Thanh.HeThong
                         // MessageBox.Show(j.ToString());
                         myRow = dtResult.NewRow();
                         // dtResult.Rows[i]["MÔ TẢ HÀNG HÓA"] = dtKey.Rows[j]["unit"].ToString() + " " + dtKey.Rows[j]["convertname"].ToString();
-                        myRow["STT"] = clSTT.ToString();
-                        clSTT++;
+                       //myRow["STT"] = clSTT.ToString();
+                        //clSTT++;
                         myRow["MÃ VẬN ĐƠN"] = dtTrungGian.Rows[i]["LM Tracking"].ToString();
                         myRow["KIỆN"] = dtTrungGian.Rows[i]["Carton No"].ToString();
                         //myRow["TRỌNG LƯỢNG"] = dtTrungGian.Rows[i]["Carton Weight(KG)"].ToString();
@@ -437,7 +432,6 @@ namespace Thanh.HeThong
                         }
                         myRow["TRỊ GIÁ"] = total.ToString();
 
-                        objXldl.MoKetNoi();
                         string sql = "select Code from tb_thanhpho where TinhTP = N'" + dtTrungGian.Rows[i]["Receiver Province/State"] + "'";
                         int codeThanhPho = objXldl.LenhVoHuong(sql);
                         int n = random.Next(0, 2);
@@ -536,7 +530,7 @@ namespace Thanh.HeThong
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             return dtResult;
         }
@@ -552,8 +546,8 @@ namespace Thanh.HeThong
             System.Data.DataTable dtResult = new System.Data.DataTable();
             try
             {
-               
 
+                // dtResult = new System.Data.DataTable();
                 dtResult = DungChung.MakeDataTables(dtResult, columnNameUpCMS);
                 Random random = new Random();
 
@@ -717,6 +711,7 @@ namespace Thanh.HeThong
             System.Data.DataTable dtResult = new System.Data.DataTable();
             try
             {
+                // dtResult = new System.Data.DataTable();
                 dtResult = DungChung.MakeDataTables(dtResult, columnNameMICChuan);
                 // dtTrungGian = DungChung.LayDL(cbSheet.SelectedItem.ToString(), DungChung.fileXuLyChinh);
                 Random random = new Random();

@@ -83,7 +83,8 @@ namespace Thanh.HeThong
 
         private void btnNhanHieu_Click(object sender, EventArgs e)
         {
-            loadForm(new FrmNhanHieu());
+            loadForm(new FrmQuanLyNhanHieu());
+           
         }
 
         private void btnFileNhanHieu_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace Thanh.HeThong
 
         private void btnTaiLenFileNhanHieu_Click(object sender, EventArgs e)
         {
-            loadForm(new FrmQuanLyNhanHieu());
+            loadForm(new FrmNhanHieu());
         }
 
         private void btnNguoiDungFake_Click(object sender, EventArgs e)

@@ -157,6 +157,7 @@
             this.GP.TabIndex = 9;
             this.GP.TabStop = false;
             this.GP.Text = "Quản lý file key";
+            this.GP.Enter += new System.EventHandler(this.GP_Enter);
             // 
             // txtBrand
             // 

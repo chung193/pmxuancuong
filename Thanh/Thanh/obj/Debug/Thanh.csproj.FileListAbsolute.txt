@@ -129,8 +129,6 @@ F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmLoading.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmMiniUpload.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmNguoiDungFake.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmNhanHieu.resources
-F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmQuanLyFileKey.resources
-F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmQuanLyFileKeyTaiLen.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmQuanLyNhanHieu.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.frmQuanTriNguoiDung.resources
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmTenThayThe.resources
@@ -150,3 +148,5 @@ F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.exe
 F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.pdb
 F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\EPPlus.dll
 F:\git\pmxuancuong\Thanh\Thanh\bin\Debug\EPPlus.xml
+F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmQuanLyKey.resources
+F:\git\pmxuancuong\Thanh\Thanh\obj\Debug\Thanh.HeThong.FrmTaiLenFileKey.resources
