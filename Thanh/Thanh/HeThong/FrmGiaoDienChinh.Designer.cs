@@ -31,24 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGiaoDienChinh));
             this.plChinh = new System.Windows.Forms.Panel();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.tabNguoiDung = new System.Windows.Forms.RibbonTab();
             this.panelNguoiDung = new System.Windows.Forms.RibbonPanel();
-            this.panelThoat = new System.Windows.Forms.RibbonPanel();
+            this.btnNguoiDung = new System.Windows.Forms.RibbonButton();
+            this.btnThoat = new System.Windows.Forms.RibbonButton();
             this.tabKey = new System.Windows.Forms.RibbonTab();
             this.panelQLFileKey = new System.Windows.Forms.RibbonPanel();
-            this.panelUploadKey = new System.Windows.Forms.RibbonPanel();
-            this.panelQLKey = new System.Windows.Forms.RibbonPanel();
+            this.btnKey = new System.Windows.Forms.RibbonButton();
+            this.btnFileKey = new System.Windows.Forms.RibbonButton();
+            this.btnTaiLenFileKey = new System.Windows.Forms.RibbonButton();
             this.tabNhanHieu = new System.Windows.Forms.RibbonTab();
             this.panelUploadFile = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.panelNhanHieu = new System.Windows.Forms.RibbonPanel();
+            this.btnNhanHieu = new System.Windows.Forms.RibbonButton();
+            this.btnFileNhanHieu = new System.Windows.Forms.RibbonButton();
+            this.btnTaiLenFileNhanHieu = new System.Windows.Forms.RibbonButton();
             this.tabFakeData = new System.Windows.Forms.RibbonTab();
             this.panelNguoiDungFake = new System.Windows.Forms.RibbonPanel();
+            this.btnNguoiDungFake = new System.Windows.Forms.RibbonButton();
+            this.btnThanhPho = new System.Windows.Forms.RibbonButton();
+            this.btnTenThayThe = new System.Windows.Forms.RibbonButton();
             this.tabXuLy = new System.Windows.Forms.RibbonTab();
-            this.panelThanhPho = new System.Windows.Forms.RibbonPanel();
-            this.panelTenThayThe = new System.Windows.Forms.RibbonPanel();
             this.panelDichLoc = new System.Windows.Forms.RibbonPanel();
-            this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.btnDichLoc = new System.Windows.Forms.RibbonButton();
+            this.btnXuatBaoCao = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // plChinh
@@ -56,9 +62,9 @@
             this.plChinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.plChinh.Location = new System.Drawing.Point(12, 154);
+            this.plChinh.Location = new System.Drawing.Point(0, 156);
             this.plChinh.Name = "plChinh";
-            this.plChinh.Size = new System.Drawing.Size(1010, 506);
+            this.plChinh.Size = new System.Drawing.Size(1034, 563);
             this.plChinh.TabIndex = 0;
             // 
             // ribbon1
@@ -78,7 +84,7 @@
             this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 116);
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1034, 139);
+            this.ribbon1.Size = new System.Drawing.Size(1034, 150);
             this.ribbon1.TabIndex = 1;
             this.ribbon1.Tabs.Add(this.tabNguoiDung);
             this.ribbon1.Tabs.Add(this.tabKey);
@@ -87,91 +93,182 @@
             this.ribbon1.Tabs.Add(this.tabXuLy);
             this.ribbon1.Text = "ribbon1";
             // 
+            // ribbonOrbMenuItem1
+            // 
+            this.ribbonOrbMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.Image")));
+            this.ribbonOrbMenuItem1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.LargeImage")));
+            this.ribbonOrbMenuItem1.Name = "ribbonOrbMenuItem1";
+            this.ribbonOrbMenuItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.SmallImage")));
+            // 
             // tabNguoiDung
             // 
             this.tabNguoiDung.Name = "tabNguoiDung";
             this.tabNguoiDung.Panels.Add(this.panelNguoiDung);
-            this.tabNguoiDung.Panels.Add(this.panelThoat);
             this.tabNguoiDung.Text = "Người dùng";
             // 
             // panelNguoiDung
             // 
             this.panelNguoiDung.Image = ((System.Drawing.Image)(resources.GetObject("panelNguoiDung.Image")));
+            this.panelNguoiDung.Items.Add(this.btnNguoiDung);
+            this.panelNguoiDung.Items.Add(this.btnThoat);
             this.panelNguoiDung.Name = "panelNguoiDung";
-            this.panelNguoiDung.Text = "Quản lý người dùng";
-            this.panelNguoiDung.Click += new System.EventHandler(this.panelNguoiDung_Click);
+            this.panelNguoiDung.Text = "";
             // 
-            // panelThoat
+            // btnNguoiDung
             // 
-            this.panelThoat.Name = "panelThoat";
-            this.panelThoat.Text = "Thoát";
-            this.panelThoat.Click += new System.EventHandler(this.panelThoat_Click);
+            this.btnNguoiDung.Image = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.Image")));
+            this.btnNguoiDung.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.LargeImage")));
+            this.btnNguoiDung.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.btnNguoiDung.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnNguoiDung.Name = "btnNguoiDung";
+            this.btnNguoiDung.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.SmallImage")));
+            this.btnNguoiDung.Text = "Quản lý người dùng";
+            this.btnNguoiDung.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.btnNguoiDung.Click += new System.EventHandler(this.btnNguoiDung_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.LargeImage")));
+            this.btnThoat.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.SmallImage")));
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // tabKey
             // 
             this.tabKey.Name = "tabKey";
             this.tabKey.Panels.Add(this.panelQLFileKey);
-            this.tabKey.Panels.Add(this.panelUploadKey);
-            this.tabKey.Panels.Add(this.panelQLKey);
             this.tabKey.Text = "Key";
             // 
             // panelQLFileKey
             // 
+            this.panelQLFileKey.Items.Add(this.btnKey);
+            this.panelQLFileKey.Items.Add(this.btnFileKey);
+            this.panelQLFileKey.Items.Add(this.btnTaiLenFileKey);
             this.panelQLFileKey.Name = "panelQLFileKey";
-            this.panelQLFileKey.Text = "Quản lý file key";
-            this.panelQLFileKey.Click += new System.EventHandler(this.panelQLFileKey_Click);
+            this.panelQLFileKey.Text = "";
             // 
-            // panelUploadKey
+            // btnKey
             // 
-            this.panelUploadKey.Name = "panelUploadKey";
-            this.panelUploadKey.Text = "Upload file key";
-            this.panelUploadKey.Click += new System.EventHandler(this.panelUploadKey_Click);
+            this.btnKey.Image = ((System.Drawing.Image)(resources.GetObject("btnKey.Image")));
+            this.btnKey.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKey.LargeImage")));
+            this.btnKey.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnKey.Name = "btnKey";
+            this.btnKey.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnKey.SmallImage")));
+            this.btnKey.Text = "Key";
+            this.btnKey.Click += new System.EventHandler(this.btnKey_Click);
             // 
-            // panelQLKey
+            // btnFileKey
             // 
-            this.panelQLKey.Name = "panelQLKey";
-            this.panelQLKey.Text = "Quản lý key";
-            this.panelQLKey.Click += new System.EventHandler(this.panelQLKey_Click);
+            this.btnFileKey.Image = ((System.Drawing.Image)(resources.GetObject("btnFileKey.Image")));
+            this.btnFileKey.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFileKey.LargeImage")));
+            this.btnFileKey.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnFileKey.Name = "btnFileKey";
+            this.btnFileKey.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnFileKey.SmallImage")));
+            this.btnFileKey.Text = "File key";
+            this.btnFileKey.Click += new System.EventHandler(this.btnFileKey_Click);
+            // 
+            // btnTaiLenFileKey
+            // 
+            this.btnTaiLenFileKey.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLenFileKey.Image")));
+            this.btnTaiLenFileKey.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaiLenFileKey.LargeImage")));
+            this.btnTaiLenFileKey.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnTaiLenFileKey.Name = "btnTaiLenFileKey";
+            this.btnTaiLenFileKey.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnTaiLenFileKey.SmallImage")));
+            this.btnTaiLenFileKey.Text = "Tải lên";
+            this.btnTaiLenFileKey.Click += new System.EventHandler(this.btnTaiLenFileKey_Click);
             // 
             // tabNhanHieu
             // 
             this.tabNhanHieu.Name = "tabNhanHieu";
             this.tabNhanHieu.Panels.Add(this.panelUploadFile);
-            this.tabNhanHieu.Panels.Add(this.ribbonPanel1);
-            this.tabNhanHieu.Panels.Add(this.panelNhanHieu);
             this.tabNhanHieu.Text = "Nhãn hiệu";
             // 
             // panelUploadFile
             // 
+            this.panelUploadFile.Items.Add(this.btnNhanHieu);
+            this.panelUploadFile.Items.Add(this.btnFileNhanHieu);
+            this.panelUploadFile.Items.Add(this.btnTaiLenFileNhanHieu);
             this.panelUploadFile.Name = "panelUploadFile";
-            this.panelUploadFile.Text = "Quản lý file nhãn hiệu";
-            this.panelUploadFile.Click += new System.EventHandler(this.panelUploadFile_Click);
+            this.panelUploadFile.Text = "";
             // 
-            // ribbonPanel1
+            // btnNhanHieu
             // 
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Upload file nhãn hiệu";
-            this.ribbonPanel1.Click += new System.EventHandler(this.ribbonPanel1_Click);
+            this.btnNhanHieu.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanHieu.Image")));
+            this.btnNhanHieu.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhanHieu.LargeImage")));
+            this.btnNhanHieu.MaximumSize = new System.Drawing.Size(100, 0);
+            this.btnNhanHieu.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnNhanHieu.Name = "btnNhanHieu";
+            this.btnNhanHieu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNhanHieu.SmallImage")));
+            this.btnNhanHieu.Text = "Nhãn hiệu";
+            this.btnNhanHieu.Click += new System.EventHandler(this.btnNhanHieu_Click);
             // 
-            // panelNhanHieu
+            // btnFileNhanHieu
             // 
-            this.panelNhanHieu.Name = "panelNhanHieu";
-            this.panelNhanHieu.Text = "QL nhãn hiệu";
-            this.panelNhanHieu.Click += new System.EventHandler(this.panelNhanHieu_Click);
+            this.btnFileNhanHieu.Image = ((System.Drawing.Image)(resources.GetObject("btnFileNhanHieu.Image")));
+            this.btnFileNhanHieu.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFileNhanHieu.LargeImage")));
+            this.btnFileNhanHieu.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnFileNhanHieu.Name = "btnFileNhanHieu";
+            this.btnFileNhanHieu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnFileNhanHieu.SmallImage")));
+            this.btnFileNhanHieu.Text = "File nhãn hiệu";
+            this.btnFileNhanHieu.Click += new System.EventHandler(this.btnFileNhanHieu_Click);
+            // 
+            // btnTaiLenFileNhanHieu
+            // 
+            this.btnTaiLenFileNhanHieu.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiLenFileNhanHieu.Image")));
+            this.btnTaiLenFileNhanHieu.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTaiLenFileNhanHieu.LargeImage")));
+            this.btnTaiLenFileNhanHieu.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnTaiLenFileNhanHieu.Name = "btnTaiLenFileNhanHieu";
+            this.btnTaiLenFileNhanHieu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnTaiLenFileNhanHieu.SmallImage")));
+            this.btnTaiLenFileNhanHieu.Text = "Tải lên";
+            this.btnTaiLenFileNhanHieu.Click += new System.EventHandler(this.btnTaiLenFileNhanHieu_Click);
             // 
             // tabFakeData
             // 
             this.tabFakeData.Name = "tabFakeData";
             this.tabFakeData.Panels.Add(this.panelNguoiDungFake);
-            this.tabFakeData.Panels.Add(this.panelThanhPho);
-            this.tabFakeData.Panels.Add(this.panelTenThayThe);
             this.tabFakeData.Text = "Dữ liệu fake";
             // 
             // panelNguoiDungFake
             // 
+            this.panelNguoiDungFake.Items.Add(this.btnNguoiDungFake);
+            this.panelNguoiDungFake.Items.Add(this.btnThanhPho);
+            this.panelNguoiDungFake.Items.Add(this.btnTenThayThe);
             this.panelNguoiDungFake.Name = "panelNguoiDungFake";
-            this.panelNguoiDungFake.Text = "Người dùng fake";
-            this.panelNguoiDungFake.Click += new System.EventHandler(this.panelNguoiDungFake_Click);
+            this.panelNguoiDungFake.Text = "";
+            // 
+            // btnNguoiDungFake
+            // 
+            this.btnNguoiDungFake.Image = ((System.Drawing.Image)(resources.GetObject("btnNguoiDungFake.Image")));
+            this.btnNguoiDungFake.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNguoiDungFake.LargeImage")));
+            this.btnNguoiDungFake.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnNguoiDungFake.Name = "btnNguoiDungFake";
+            this.btnNguoiDungFake.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNguoiDungFake.SmallImage")));
+            this.btnNguoiDungFake.Text = "Người dùng";
+            this.btnNguoiDungFake.Click += new System.EventHandler(this.btnNguoiDungFake_Click);
+            // 
+            // btnThanhPho
+            // 
+            this.btnThanhPho.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhPho.Image")));
+            this.btnThanhPho.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThanhPho.LargeImage")));
+            this.btnThanhPho.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnThanhPho.Name = "btnThanhPho";
+            this.btnThanhPho.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnThanhPho.SmallImage")));
+            this.btnThanhPho.Text = "Thành phố";
+            this.btnThanhPho.Click += new System.EventHandler(this.btnThanhPho_Click);
+            // 
+            // btnTenThayThe
+            // 
+            this.btnTenThayThe.Image = ((System.Drawing.Image)(resources.GetObject("btnTenThayThe.Image")));
+            this.btnTenThayThe.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTenThayThe.LargeImage")));
+            this.btnTenThayThe.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnTenThayThe.Name = "btnTenThayThe";
+            this.btnTenThayThe.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnTenThayThe.SmallImage")));
+            this.btnTenThayThe.Text = "Tên thay thế";
+            this.btnTenThayThe.Click += new System.EventHandler(this.btnTenThayThe_Click);
             // 
             // tabXuLy
             // 
@@ -179,33 +276,43 @@
             this.tabXuLy.Panels.Add(this.panelDichLoc);
             this.tabXuLy.Text = "Xử lý";
             // 
-            // panelThanhPho
-            // 
-            this.panelThanhPho.Name = "panelThanhPho";
-            this.panelThanhPho.Text = "Thành phố";
-            this.panelThanhPho.Click += new System.EventHandler(this.panelThanhPho_Click);
-            // 
-            // panelTenThayThe
-            // 
-            this.panelTenThayThe.Name = "panelTenThayThe";
-            this.panelTenThayThe.Text = "Tên thay thế";
-            this.panelTenThayThe.Click += new System.EventHandler(this.panelTenThayThe_Click);
-            // 
             // panelDichLoc
             // 
+            this.panelDichLoc.Items.Add(this.btnDichLoc);
+            this.panelDichLoc.Items.Add(this.btnXuatBaoCao);
             this.panelDichLoc.Name = "panelDichLoc";
-            this.panelDichLoc.Text = "Dịch lọc";
-            this.panelDichLoc.Click += new System.EventHandler(this.panelDichLoc_Click);
-            
+            this.panelDichLoc.Text = "";
+            // 
+            // btnDichLoc
+            // 
+            this.btnDichLoc.Image = ((System.Drawing.Image)(resources.GetObject("btnDichLoc.Image")));
+            this.btnDichLoc.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDichLoc.LargeImage")));
+            this.btnDichLoc.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnDichLoc.Name = "btnDichLoc";
+            this.btnDichLoc.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDichLoc.SmallImage")));
+            this.btnDichLoc.Text = "Dịch lọc";
+            this.btnDichLoc.Click += new System.EventHandler(this.btnDichLoc_Click);
+            // 
+            // btnXuatBaoCao
+            // 
+            this.btnXuatBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatBaoCao.Image")));
+            this.btnXuatBaoCao.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatBaoCao.LargeImage")));
+            this.btnXuatBaoCao.MinimumSize = new System.Drawing.Size(100, 0);
+            this.btnXuatBaoCao.Name = "btnXuatBaoCao";
+            this.btnXuatBaoCao.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnXuatBaoCao.SmallImage")));
+            this.btnXuatBaoCao.Text = "Xuất báo cáo";
+            this.btnXuatBaoCao.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
             // 
             // FrmGiaoDienChinh
             // 
-            this.ClientSize = new System.Drawing.Size(1034, 672);
+            this.ClientSize = new System.Drawing.Size(1034, 723);
             this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.plChinh);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmGiaoDienChinh";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmGiaoDienChinh_Load);
             this.ResumeLayout(false);
 
         }
@@ -232,5 +339,19 @@
         private System.Windows.Forms.RibbonPanel panelDichLoc;
         private System.Windows.Forms.RibbonPanel panelXuLy;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem1;
+        private System.Windows.Forms.RibbonPanel panelXuatBaoCao;
+        private System.Windows.Forms.RibbonButton btnNguoiDung;
+        private System.Windows.Forms.RibbonButton btnThoat;
+        private System.Windows.Forms.RibbonButton btnKey;
+        private System.Windows.Forms.RibbonButton btnFileKey;
+        private System.Windows.Forms.RibbonButton btnTaiLenFileKey;
+        private System.Windows.Forms.RibbonButton btnNhanHieu;
+        private System.Windows.Forms.RibbonButton btnFileNhanHieu;
+        private System.Windows.Forms.RibbonButton btnTaiLenFileNhanHieu;
+        private System.Windows.Forms.RibbonButton btnNguoiDungFake;
+        private System.Windows.Forms.RibbonButton btnThanhPho;
+        private System.Windows.Forms.RibbonButton btnTenThayThe;
+        private System.Windows.Forms.RibbonButton btnDichLoc;
+        private System.Windows.Forms.RibbonButton btnXuatBaoCao;
     }
 }

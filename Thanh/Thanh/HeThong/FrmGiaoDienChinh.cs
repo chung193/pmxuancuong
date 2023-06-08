@@ -36,78 +36,87 @@ namespace Thanh.HeThong
             f.Show();
         }
 
+
+        
+
         private void FrmGiaoDienChinh_Load(object sender, EventArgs e)
         {
-            String quyen =  DungChung.dtNguoidung.Rows[0][2].ToString();
-            //MessageBox.Show(quyen);
-            if(quyen != "Quản trị viên")
+            String quyen = DungChung.dtNguoidung.Rows[0][2].ToString();
+            if (quyen == "Người dùng")
             {
+                tabFakeData.Visible = false;
+                tabKey.Visible = false;
+                tabNhanHieu.Visible = false;
+                tabNguoiDung.Visible = false;
+            }
+            else
+            {
+                
             }
         }
 
-        private void panelThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();   
-        }
-
-        private void panelNguoiDung_Click(object sender, EventArgs e)
+        private void btnNguoiDung_Click(object sender, EventArgs e)
         {
             loadForm(new frmQuanTriNguoiDung());
         }
 
-
-        private void panelUploadKey_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnKey_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmQuanLyKey());
+        }
+
+        private void btnFileKey_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmTaiLenFileKey());
+        }
+
+        private void btnTaiLenFileKey_Click(object sender, EventArgs e)
+        {
+            
             loadForm(new FrmFileKey());
         }
 
-        private void panelQLKey_Click(object sender, EventArgs e)
-        {
-           
-            loadForm(new FrmQuanLyFileKey());
-        }
-
-        private void panelQLFileKey_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmQuanLyFileKeyTaiLen());
-        }
-
-        private void panelUploadFile_Click(object sender, EventArgs e)
-        {
-            loadForm(new FrmFileNhanHieu());
-        }
-
-        private void ribbonPanel1_Click(object sender, EventArgs e)
+        private void btnNhanHieu_Click(object sender, EventArgs e)
         {
             loadForm(new FrmNhanHieu());
         }
 
-        private void panelNhanHieu_Click(object sender, EventArgs e)
+        private void btnFileNhanHieu_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmFileNhanHieu());
+        }
+
+        private void btnTaiLenFileNhanHieu_Click(object sender, EventArgs e)
         {
             loadForm(new FrmQuanLyNhanHieu());
         }
 
-        private void panelNguoiDungFake_Click(object sender, EventArgs e)
+        private void btnNguoiDungFake_Click(object sender, EventArgs e)
         {
             loadForm(new FrmNguoiDungFake());
         }
 
-        private void panelThanhPho_Click(object sender, EventArgs e)
+        private void btnThanhPho_Click(object sender, EventArgs e)
         {
             loadForm(new frmThanhPho());
         }
 
-        private void panelTenThayThe_Click(object sender, EventArgs e)
+        private void btnTenThayThe_Click(object sender, EventArgs e)
         {
             loadForm(new FrmTenThayThe());
         }
 
-        private void panelDichLoc_Click(object sender, EventArgs e)
+        private void btnDichLoc_Click(object sender, EventArgs e)
         {
             loadForm(new FrmXuLyChinh());
         }
 
-        private void panelXuLy_Click(object sender, EventArgs e)
+        private void btnXuatBaoCao_Click(object sender, EventArgs e)
         {
             loadForm(new FrmXuLyMoRong());
         }

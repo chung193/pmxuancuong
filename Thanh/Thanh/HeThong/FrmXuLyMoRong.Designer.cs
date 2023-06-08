@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddThongtin = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,12 +49,9 @@
             this.btnChonFile = new System.Windows.Forms.Button();
             this.txtChonFile = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbChinh = new System.Windows.Forms.ProgressBar();
-            this.pnProcess = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgvXuLy = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.pnProcess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXuLy)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,20 +74,21 @@
             this.groupBox1.Controls.Add(this.btnChonFile);
             this.groupBox1.Controls.Add(this.txtChonFile);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1344, 101);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(1792, 124);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Xử lý";
             // 
             // btnAddThongtin
             // 
-            this.btnAddThongtin.Location = new System.Drawing.Point(1120, 32);
+            this.btnAddThongtin.Location = new System.Drawing.Point(1493, 39);
+            this.btnAddThongtin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddThongtin.Name = "btnAddThongtin";
-            this.btnAddThongtin.Size = new System.Drawing.Size(75, 28);
+            this.btnAddThongtin.Size = new System.Drawing.Size(100, 34);
             this.btnAddThongtin.TabIndex = 16;
             this.btnAddThongtin.Text = "...";
             this.btnAddThongtin.UseVisualStyleBackColor = true;
@@ -99,77 +97,85 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(940, 64);
+            this.label6.Location = new System.Drawing.Point(1253, 79);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.Size = new System.Drawing.Size(69, 16);
             this.label6.TabIndex = 15;
             this.label6.Text = "Ngày đến:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(931, 38);
+            this.label5.Location = new System.Drawing.Point(1241, 47);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 14;
             this.label5.Text = "Chuyến bay:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(662, 64);
+            this.label4.Location = new System.Drawing.Point(883, 79);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(72, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "Số MAWB:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(691, 39);
+            this.label3.Location = new System.Drawing.Point(921, 48);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "Kiểu:";
             // 
             // lbNgayDen
             // 
             this.lbNgayDen.AutoSize = true;
-            this.lbNgayDen.Location = new System.Drawing.Point(1013, 70);
+            this.lbNgayDen.Location = new System.Drawing.Point(1351, 86);
+            this.lbNgayDen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNgayDen.Name = "lbNgayDen";
-            this.lbNgayDen.Size = new System.Drawing.Size(0, 13);
+            this.lbNgayDen.Size = new System.Drawing.Size(0, 16);
             this.lbNgayDen.TabIndex = 11;
             // 
             // lbSoMAWB
             // 
             this.lbSoMAWB.AutoSize = true;
-            this.lbSoMAWB.Location = new System.Drawing.Point(756, 70);
+            this.lbSoMAWB.Location = new System.Drawing.Point(1008, 86);
+            this.lbSoMAWB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSoMAWB.Name = "lbSoMAWB";
-            this.lbSoMAWB.Size = new System.Drawing.Size(0, 13);
+            this.lbSoMAWB.Size = new System.Drawing.Size(0, 16);
             this.lbSoMAWB.TabIndex = 10;
             // 
             // lbChuyenBay
             // 
             this.lbChuyenBay.AutoSize = true;
-            this.lbChuyenBay.Location = new System.Drawing.Point(1013, 38);
+            this.lbChuyenBay.Location = new System.Drawing.Point(1351, 47);
+            this.lbChuyenBay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbChuyenBay.Name = "lbChuyenBay";
-            this.lbChuyenBay.Size = new System.Drawing.Size(0, 13);
+            this.lbChuyenBay.Size = new System.Drawing.Size(0, 16);
             this.lbChuyenBay.TabIndex = 9;
             // 
             // lbKieu
             // 
             this.lbKieu.AutoSize = true;
-            this.lbKieu.Location = new System.Drawing.Point(756, 35);
+            this.lbKieu.Location = new System.Drawing.Point(1008, 43);
+            this.lbKieu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbKieu.Name = "lbKieu";
-            this.lbKieu.Size = new System.Drawing.Size(0, 13);
+            this.lbKieu.Size = new System.Drawing.Size(0, 16);
             this.lbKieu.TabIndex = 8;
             // 
             // btnCMS
             // 
-            this.btnCMS.Location = new System.Drawing.Point(1200, 32);
-            this.btnCMS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCMS.Location = new System.Drawing.Point(1600, 39);
+            this.btnCMS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCMS.Name = "btnCMS";
-            this.btnCMS.Size = new System.Drawing.Size(140, 28);
+            this.btnCMS.Size = new System.Drawing.Size(187, 34);
             this.btnCMS.TabIndex = 7;
             this.btnCMS.Text = "Xuất file CMS";
             this.btnCMS.UseVisualStyleBackColor = true;
@@ -177,10 +183,10 @@
             // 
             // btnMIC
             // 
-            this.btnMIC.Location = new System.Drawing.Point(1200, 62);
-            this.btnMIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMIC.Location = new System.Drawing.Point(1600, 76);
+            this.btnMIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMIC.Name = "btnMIC";
-            this.btnMIC.Size = new System.Drawing.Size(140, 28);
+            this.btnMIC.Size = new System.Drawing.Size(187, 34);
             this.btnMIC.TabIndex = 6;
             this.btnMIC.Text = "Xuất file MIC chuẩn";
             this.btnMIC.UseVisualStyleBackColor = true;
@@ -188,10 +194,10 @@
             // 
             // BtnXuat1
             // 
-            this.BtnXuat1.Location = new System.Drawing.Point(472, 56);
-            this.BtnXuat1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnXuat1.Location = new System.Drawing.Point(629, 69);
+            this.BtnXuat1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnXuat1.Name = "BtnXuat1";
-            this.BtnXuat1.Size = new System.Drawing.Size(140, 28);
+            this.BtnXuat1.Size = new System.Drawing.Size(187, 34);
             this.BtnXuat1.TabIndex = 5;
             this.BtnXuat1.Text = "Xuất bảng kê OLA";
             this.BtnXuat1.UseVisualStyleBackColor = true;
@@ -200,29 +206,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(382, 38);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(509, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Chọn sheet";
             // 
             // cbSheet
             // 
             this.cbSheet.FormattingEnabled = true;
-            this.cbSheet.Location = new System.Drawing.Point(456, 31);
-            this.cbSheet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSheet.Location = new System.Drawing.Point(608, 38);
+            this.cbSheet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSheet.Name = "cbSheet";
-            this.cbSheet.Size = new System.Drawing.Size(156, 21);
+            this.cbSheet.Size = new System.Drawing.Size(207, 24);
             this.cbSheet.TabIndex = 3;
             this.cbSheet.SelectedIndexChanged += new System.EventHandler(this.cbSheet_SelectedIndexChanged);
             // 
             // btnChonFile
             // 
-            this.btnChonFile.Location = new System.Drawing.Point(77, 56);
-            this.btnChonFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChonFile.Location = new System.Drawing.Point(103, 69);
+            this.btnChonFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChonFile.Name = "btnChonFile";
-            this.btnChonFile.Size = new System.Drawing.Size(140, 28);
+            this.btnChonFile.Size = new System.Drawing.Size(187, 34);
             this.btnChonFile.TabIndex = 2;
             this.btnChonFile.Text = "Chọn file";
             this.btnChonFile.UseVisualStyleBackColor = true;
@@ -230,43 +235,20 @@
             // 
             // txtChonFile
             // 
-            this.txtChonFile.Location = new System.Drawing.Point(77, 32);
-            this.txtChonFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChonFile.Location = new System.Drawing.Point(103, 39);
+            this.txtChonFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtChonFile.Name = "txtChonFile";
-            this.txtChonFile.Size = new System.Drawing.Size(295, 20);
+            this.txtChonFile.Size = new System.Drawing.Size(392, 22);
             this.txtChonFile.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(24, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn file";
-            // 
-            // pbChinh
-            // 
-            this.pbChinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbChinh.Location = new System.Drawing.Point(14, 4);
-            this.pbChinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pbChinh.Name = "pbChinh";
-            this.pbChinh.Size = new System.Drawing.Size(270, 19);
-            this.pbChinh.TabIndex = 3;
-            // 
-            // pnProcess
-            // 
-            this.pnProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnProcess.Controls.Add(this.pbChinh);
-            this.pnProcess.Location = new System.Drawing.Point(416, 440);
-            this.pnProcess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnProcess.Name = "pnProcess";
-            this.pnProcess.Size = new System.Drawing.Size(298, 25);
-            this.pnProcess.TabIndex = 4;
-            this.pnProcess.Visible = false;
             // 
             // timer1
             // 
@@ -279,48 +261,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvXuLy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvXuLy.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvXuLy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvXuLy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvXuLy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvXuLy.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvXuLy.Location = new System.Drawing.Point(9, 115);
-            this.dgvXuLy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvXuLy.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvXuLy.Location = new System.Drawing.Point(12, 142);
+            this.dgvXuLy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvXuLy.Name = "dgvXuLy";
             this.dgvXuLy.RowHeadersWidth = 51;
             this.dgvXuLy.RowTemplate.Height = 24;
             this.dgvXuLy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvXuLy.Size = new System.Drawing.Size(1346, 653);
+            this.dgvXuLy.Size = new System.Drawing.Size(1795, 804);
             this.dgvXuLy.TabIndex = 1;
             // 
             // FrmXuLyMoRong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 779);
-            this.Controls.Add(this.pnProcess);
+            this.ClientSize = new System.Drawing.Size(1819, 959);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvXuLy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmXuLyMoRong";
             this.Text = "FrmXuLyMoRong";
             this.Load += new System.EventHandler(this.FrmXuLyMoRong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnProcess.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvXuLy)).EndInit();
             this.ResumeLayout(false);
 
@@ -345,8 +325,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddThongtin;
-        private System.Windows.Forms.ProgressBar pbChinh;
-        private System.Windows.Forms.Panel pnProcess;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dgvXuLy;
     }

@@ -294,15 +294,7 @@ namespace Thanh.HeThong
         /// <param name="value"></param>
         private void processBar(int min, int max, int value)
         {
-            timer1.Start();
-            pbChinh.Minimum = min;
-            pbChinh.Maximum = max;
-            pbChinh.Value = value;
-            if(value == max)
-            {
-                dem = 1;
-                timer1.Stop();
-            }
+            
         }
 
         /// <summary>
@@ -408,8 +400,6 @@ namespace Thanh.HeThong
                 int clSTT = 1;
                 for (int i = 0; i < dtTrungGian.Rows.Count; i++)
                 {
-                    pnProcess.Visible = true;
-                    processBar(0, dtTrungGian.Rows.Count, i) ;
 
                     //Thread t = new Thread(new ThreadStart(() =>
                     //{
@@ -542,7 +532,6 @@ namespace Thanh.HeThong
                 // xử lý với branch\
                 dtExport = dtResult;
                 dgvXuLy.DataSource = dtExport;
-                pnProcess.Visible = false;
                 return dtResult;
             }
             catch (Exception ex)
@@ -572,7 +561,6 @@ namespace Thanh.HeThong
                 // xử lý lấy key
                 for (int i = 0; i < dtTrungGian.Rows.Count; i++)
                 {
-                    pnProcess.Visible = true;
                     processBar(0, dtTrungGian.Rows.Count, i);
 
                     DataRow myRow;
@@ -710,7 +698,6 @@ namespace Thanh.HeThong
                 // xử lý với branch
                 dtExport = dtResult;
                 dgvXuLy.DataSource = dtExport;
-                pnProcess.Visible = false;
             }
             catch (Exception ex)
             {
@@ -738,7 +725,6 @@ namespace Thanh.HeThong
                 
                 for (int i = 0; i < dtTrungGian.Rows.Count; i++)
                 {
-                    pnProcess.Visible = true;
                     processBar(0, dtTrungGian.Rows.Count, i);
 
                     DataRow myRow;
@@ -900,7 +886,6 @@ namespace Thanh.HeThong
                 // xử lý với branch
                 dtExport = dtResult;
                 dgvXuLy.DataSource = dtExport;
-                pnProcess.Visible = false;
             }
             catch (Exception ex)
             {
