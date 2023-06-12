@@ -6,8 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 using OfficeOpenXml;
 using static System.Windows.Forms.RibbonHelpers.WinApi;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Thanh.ThuVien
 {
@@ -40,22 +42,20 @@ namespace Thanh.ThuVien
             int countRow = dataTable.Rows.Count;   
             int countColumn = dataTable.Columns.Count;
             // với ola , cột tổng là tổng trọng lượng và trị giá
-            double totalWeight = 0;
-            double totalPrice = 0;
+            object sum = 0, total = 0;
             using (ExcelPackage pack = new ExcelPackage())
             {
                 FileInfo excelFile = new FileInfo(saveAsLocation);
                 ExcelWorksheet ws = pack.Workbook.Worksheets.Add(worksheetName);
-                ws.Cells["A1"].LoadFromDataTable(dataTable, true);
+               
 
                 switch (ReporType)
                 {
                     case "ola":
                         // với ola , cột tổng là tổng trọng lượng và trị giá
-                        //totalWeight = Double.Parse(dataTable.Compute("Sum([TRỌNG LƯỢNG])", string.Empty).ToString());
-                        //totalPrice = Double.Parse(dataTable.Compute("Sum([TRỊ GIÁ])", string.Empty).ToString());
-                        object sum = dataTable.Compute("Sum((Convert([TRỌNG LƯỢNG], 'System.Int32'))", "[TRỌNG LƯỢNG] IS NOT NULL");
-
+                        
+                        sum = dataTable.Compute("sum([TRỌNG LƯỢNG])", "");
+                        total = dataTable.Compute("sum([TRỊ GIÁ])", "");
                         break;
                     case "cms":
                         // code block
@@ -66,11 +66,42 @@ namespace Thanh.ThuVien
                     default:
                         // code block
                         break;
-                        //            }
-
-
                 }
-                var excelCellrange = ws.Cells[1, 1, countRow + 1, countColumn];
+                int row = 1;
+                int col = 1;
+                // prepared sheet
+                switch (ReporType)
+                {
+                    case "ola":
+                        col = 5; row = 1;
+                        ws.Cells[1, 1].Value = title;
+                        ws.Cells[2, 2].Value = titleOla;
+                        ws.Cells[2, 2].Style.Font.Bold = true;
+                        ws.Cells[2, 2].Style.Font.Size = 16;
+                        ws.Cells[3, 6].Value = infoTile;
+                        ws.Cells[3, 7].Value = infoContent;
+                        ws.Cells[countRow + 6, 3].Value = "Tổng";
+                        ws.Cells[countRow + 6, 5].Value = (Double.Parse(sum.ToString())).ToString();
+                        ws.Cells[countRow + 6, 6].Value = (Double.Parse(total.ToString())).ToString();
+                        ws.Cells[countRow + 7, 9].Value = endFile;
+                        ws.Cells[countRow + 8, 9].Value = bussiness;
+                        ws.Cells[countRow + 7, 9].Value = sign;
+                        
+                        break;
+                    case "cms":
+                        // code block
+                        break;
+                    case "mic":
+                        // code block
+                        break;
+                    default:
+                        // code block
+                        break;
+                }
+
+                ws.Cells[col, row].LoadFromDataTable(dataTable, true);
+
+                var excelCellrange = ws.Cells[col, row, countRow + col , countColumn + row-1];
                 excelCellrange.AutoFitColumns();
                 excelCellrange.Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
                 excelCellrange.Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;

@@ -20,7 +20,7 @@ namespace Thanh.ThuVien
             //"Data Source=DESKTOP-G25SBPL;Initial Catalog=thanh;Integrated Security=True";
             // Data Source=DESKTOP-G25SBPL;Initial Catalog=thanh;Persist Security Info=True;User ID=thanh;Password=*********
             string[] host = DungChung.DocFile();
-            strConn = "Data Source=" + host[0] + ";Initial Catalog=evi68651_xuancuong;Persist Security Info=True;User Id=" + host[1] + ";Password=" + host[2];
+            strConn = "Data Source=" + host[0] + ";Initial Catalog=evi68651_xuancuong;Connection Timeout=3600;Persist Security Info=True;User Id=" + host[1] + ";Password=" + host[2];
             conn = new SqlConnection(strConn);
         }
 
@@ -50,6 +50,7 @@ namespace Thanh.ThuVien
         public DataTable LayDt(string strSql)
         {
             SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+            
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;

@@ -73,7 +73,7 @@
             this.tbTenDangNhap.Name = "tbTenDangNhap";
             this.tbTenDangNhap.Size = new System.Drawing.Size(361, 24);
             this.tbTenDangNhap.TabIndex = 2;
-            this.tbTenDangNhap.Text = "chung193";
+            this.tbTenDangNhap.Text = "Test";
             // 
             // tbMatKhau
             // 
@@ -84,7 +84,7 @@
             this.tbMatKhau.PasswordChar = '*';
             this.tbMatKhau.Size = new System.Drawing.Size(361, 24);
             this.tbMatKhau.TabIndex = 4;
-            this.tbMatKhau.Text = "123123";
+            this.tbMatKhau.Text = "test123";
             // 
             // lbMatKhau
             // 
