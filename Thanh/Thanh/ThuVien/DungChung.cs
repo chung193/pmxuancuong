@@ -251,16 +251,16 @@ namespace Thanh.ThuVien
             {
                 DataColumn column = new DataColumn();
                 column.ColumnName = columnNameArr[i];
-                column.DataType = System.Type.GetType("System.String");
-                //if (column.ColumnName == "TRỌNG LƯỢNG")
-                //{
-                //    column.DataType = System.Type.GetType("System.Int32)");
-                //}
-                //else
-                //{
-                //    column.DataType = System.Type.GetType("System.String");
-                //}
-                
+                //column.DataType = System.Type.GetType("System.String");
+                if (column.ColumnName == "TRỌNG LƯỢNG" || column.ColumnName == "TRỊ GIÁ")
+                {
+                    column.DataType = typeof(Double);
+                }
+                else
+                {
+                    column.DataType = System.Type.GetType("System.String");
+                }
+
                 dt.Columns.Add(column);
             }
             return dt;

@@ -26,7 +26,7 @@ namespace Thanh.HeThong
 
         private string[] columnName = { "STT", "MÃ VẬN ĐƠN", "MÔ TẢ HÀNG HÓA", "KIỆN", "TRỌNG LƯỢNG", "TRỊ GIÁ", "NGƯỜI GỬI", "NGƯỜI NHẬN", "ĐỊA CHỈ NGƯỜI NHẬN", "Ghi Chú" };
         private string[] columnNameUpCMS = { "ID Card", "MasterAirWayBill", "FlightNumber", "FlightDate", "LM Tracking", "Product Name 1", "ContentVN", "HSCode", "Currency", "Original quantity", "Declared Value 1", "Parcel Weight(KG)", "Customs Declaration", "Original", "Destination", "Receiver Name", "Receiver Address City", "Receiver Telephone", "Carton No", "Country", "Sender Name", "Sender Address" };
-        private string[] columnNameMICChuan = { "MAWB (20)", "HAWB (20)", "CANHAN_TOCHUC(1)", "DIADIEM_LUUKHO(7)", "MAYBAY(12)", "NGAY_DEN(8)", "DIADIEM_DOHANG(5)", "DIADIEM_XEPHANG(5)", "MA_NGUOI NHAP (13)", "TEN_NGUOINHAP (100)", "DIACHI_NHAP (100)", "SDT_NHAP (20)", "Mã Nước_XX", "Tên_NGUOI_XUAT_Khẩu(70)", "DIACHI_XUAT", "Mã bưu chính (7)", "SO_LUONG(6)", "TRONG_LUONG(8)", "Mã phân loại giá hóa đơn (1)", "Mã điều kiện giá hóa đơn(3)", "Mã đồng Tiền của hóa đơn (3)", "Tổng tri giá hóa đơn (20)", "TRI_GIA tính huế(8)", "MO TA_HANG(200)", "Số quản lý nội bộ", "GHI_CHU(100)", "Mã phân loại cước vận chuyển (1)", "Mã iền ệ cước vận chuyển (3)", "Phí vận chuyển (18)", "Mã phân loại bảo hiểm (1)", "Mã iền ệ của iền bảo hiểm (3)", "Phí bảo hiểm (18)" };
+        private string[] columnNameMICChuan = { "MAWB (20)", "HAWB (20)", "CANHAN_TOCHUC(1)", "DIADIEM_LUUKHO(7)", "MAYBAY(12)", "NGAY_DEN(8)", "DIADIEM_DOHANG(5)", "DIADIEM_XEPHANG(5)", "MA_NGUOI NHAP (13)", "TEN_NGUOINHAP (100)", "DIACHI_NHAP (100)", "SDT_NHAP (20)", "Mã Nước_XX", "Tên_NGUOI_XUAT_Khẩu(70)", "DIACHI_XUAT", "Mã bưu chính (7)", "SO_LUONG(6)", "TRONG_LUONG(8)", "Mã phân loại giá hóa đơn (1)", "Mã điều kiện giá hóa đơn(3)", "Mã đồng Tiền của hóa đơn (3)", "Tổng tri giá hóa đơn (20)", "TRI_GIA tính thuế(8)", "MO TA_HANG(200)", "Số quản lý nội bộ", "GHI_CHU(100)", "Mã phân loại cước vận chuyển (1)", "Mã tiền tệ cước vận chuyển (3)", "Phí vận chuyển (18)", "Mã phân loại bảo hiểm (1)", "Mã tiền tệ của tiền bảo hiểm (3)", "Phí bảo hiểm (18)" };
 
         //private List<string> replaceName = new List<string>();
         //private List<string> fakeName = new List<string>();
@@ -398,7 +398,7 @@ namespace Thanh.HeThong
                 Random random = new Random();
 
                 // xử lý lấy key
-               // int clSTT = 1;
+               int clSTT = 1;
                 for (int i = 0; i < dtTrungGian.Rows.Count; i++)
                 {
                     int j = DungChung.TimKiemKey(dtTrungGian.Rows[i]["Product Name 1"].ToString(), dtKey);
@@ -407,9 +407,9 @@ namespace Thanh.HeThong
                         DataRow myRow;
                         // MessageBox.Show(j.ToString());
                         myRow = dtResult.NewRow();
-                        // dtResult.Rows[i]["MÔ TẢ HÀNG HÓA"] = dtKey.Rows[j]["unit"].ToString() + " " + dtKey.Rows[j]["convertname"].ToString();
-                       //myRow["STT"] = clSTT.ToString();
-                        //clSTT++;
+                        //dtResult.Rows[i]["MÔ TẢ HÀNG HÓA"] = dtKey.Rows[j]["unit"].ToString() + " " + dtKey.Rows[j]["convertname"].ToString();
+                        myRow["STT"] = clSTT.ToString();
+                        clSTT++;
                         myRow["MÃ VẬN ĐƠN"] = dtTrungGian.Rows[i]["LM Tracking"].ToString();
                         myRow["KIỆN"] = dtTrungGian.Rows[i]["Carton No"].ToString();
                         //myRow["TRỌNG LƯỢNG"] = dtTrungGian.Rows[i]["Carton Weight(KG)"].ToString();
@@ -589,11 +589,37 @@ namespace Thanh.HeThong
                             dem++;
                         }
 
+
+                        // id card
+                        //int sex = random.Next(1);
+
+                        //DateTime current_year = DateTime.Now;
+                        //string year = current_year.Year.ToString();
+                        //int yearInt = Int32.Parse(year.Substring(1).ToString()) - 18;
+                        //int yearFrom = yearInt - 29;
+                        //int yearResult = random.Next(yearFrom, yearInt);
+
+                        //int lastChar = random.Next(100000, 999999);
+
+                        //string sql = "select Code from tb_thanhpho where TinhTP = N'" + dtTrungGian.Rows[i]["Receiver Province/State"] + "'";
+                        //int codeThanhPho = objXldl.LenhVoHuong(sql);
+
+                        //myRow["ID Card"] = codeThanhPho.ToString() + ;
+
+                        string sql = "select Code from tb_thanhpho where TinhTP = N'" + dtTrungGian.Rows[i]["Receiver Province/State"] + "'";
+                        int codeThanhPho = objXldl.LenhVoHuong(sql);
+                        int n = random.Next(0, 2);
+
+                        int bYear = random.Next(70, 99);
+
+                        // 100000-999999
+                        int rand = random.Next(100000, 999999);
+                        myRow["ID Card"] = codeThanhPho.ToString() + n.ToString() + bYear.ToString() + rand.ToString();
+
                         myRow["Customs Declaration"] = total.ToString();
                         myRow["Original"] = "CNSZX";
-                        myRow["Destination"] = "HAN";
-                        // myRow["Receiver Name"] = dtTrungGian.Rows[i]["Receiver Name"].ToString();
-                        myRow["Receiver Name"] = objXldl.checkName( dtTrungGian.Rows[i]["Receiver Name"].ToString());
+                        myRow["Destination"] = "HAN"; 
+                        myRow["Receiver Name"] = objXldl.checkName(dtTrungGian.Rows[i]["Receiver Name"].ToString());
                         myRow["Receiver Address City"] = dtTrungGian.Rows[i]["Receiver Address"].ToString()+ ", " + dtTrungGian.Rows[i]["Receiver City"].ToString() + ", "  + dtTrungGian.Rows[i]["Receiver Province/State"].ToString() + ", Việt Nam";
                         myRow["Receiver Telephone"] = dtTrungGian.Rows[i]["Receiver Telephone"].ToString();
                         myRow["Carton No"] = dtTrungGian.Rows[i]["Carton No"].ToString();
@@ -770,14 +796,14 @@ namespace Thanh.HeThong
                             dem++;
                         }
                         myRow["Tổng tri giá hóa đơn (20)"] = total.ToString();
-                        myRow["TRI_GIA tính huế(8)"] = "";
+                        myRow["TRI_GIA tính thuế(8)"] = "";
                         myRow["Số quản lý nội bộ"] = dtTrungGian.Rows[i]["Carton No"].ToString();
 
                         myRow["Mã phân loại cước vận chuyển (1)"] = "";
-                        myRow["Mã iền ệ cước vận chuyển (3)"] = "";
+                        myRow["Mã tiền tệ cước vận chuyển (3)"] = "";
                         myRow["Phí vận chuyển (18)"] = "";
                         myRow["Mã phân loại bảo hiểm (1)"] = "";
-                        myRow["Mã iền ệ của iền bảo hiểm (3)"] = "";
+                        myRow["Mã tiền tệ của tiền bảo hiểm (3)"] = "";
                         myRow["Phí bảo hiểm (18)"] = "";
 
                         myRow["MO TA_HANG(200)"] = DungChung.RandomItemInArray(dtKey.Rows[j]["unit"].ToString()) + " " + dtKey.Rows[j]["convertname"].ToString();
@@ -862,7 +888,6 @@ namespace Thanh.HeThong
                         // hết phần content vn
 
                         // phần ghi chú
-                        objXldl.MoKetNoi();
                         string sql = "select Code from tb_thanhpho where TinhTP = N'" + dtTrungGian.Rows[i]["Receiver Province/State"] + "'";
                         int codeThanhPho = objXldl.LenhVoHuong(sql);
                         int n = random.Next(0, 2);
@@ -884,7 +909,7 @@ namespace Thanh.HeThong
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             return dtResult;
         }

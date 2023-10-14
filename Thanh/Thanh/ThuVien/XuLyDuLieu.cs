@@ -50,6 +50,7 @@ namespace Thanh.ThuVien
         public DataTable LayDt(string strSql)
         {
             SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+            
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
