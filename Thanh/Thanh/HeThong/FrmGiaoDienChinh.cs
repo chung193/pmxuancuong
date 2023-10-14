@@ -121,5 +121,30 @@ namespace Thanh.HeThong
         {
             loadForm(new FrmXuLyMoRong());
         }
+
+        private void luongbtn_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmLuong());
+        }
+
+        private void ribbonButton12_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmCheck());
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmLuong());
+        }
+
+        private void ribbonButton16_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmCheck());
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            loadForm(new FrmCheckNhapKho());
+        }
     }
 }

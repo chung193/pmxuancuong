@@ -186,7 +186,14 @@ namespace Thanh.ThuVien
                     DataRow row = tbl.Rows.Add();
                     foreach (var cell in wsRow)
                     {
-                        row[cell.Start.Column - 1] = cell.Text;
+                        if (string.IsNullOrEmpty(cell.Text))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            row[cell.Start.Column - 1] = cell.Text;
+                        }   
                     }
                 }
                 return tbl;

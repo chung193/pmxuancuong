@@ -73,6 +73,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeThong\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\FrmCheckNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\FrmCheckNhapKho.Designer.cs">
+      <DependentUpon>FrmCheckNhapKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </Compile>
     <Compile Include="HeThong\FrmLoading.Designer.cs">
       <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\FrmLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\FrmLuong.Designer.cs">
+      <DependentUpon>FrmLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="HeThong\FrmMiniUpload.cs">
       <SubType>Form</SubType>
@@ -186,6 +204,12 @@
     <Compile Include="ThuVien\CongCuExcel.cs" />
     <Compile Include="ThuVien\DungChung.cs" />
     <Compile Include="ThuVien\XuLyDuLieu.cs" />
+    <EmbeddedResource Include="HeThong\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\FrmCheckNhapKho.resx">
+      <DependentUpon>FrmCheckNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HeThong\FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -207,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\FrmLuong.resx">
+      <DependentUpon>FrmLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\FrmMiniUpload.resx">
       <DependentUpon>FrmMiniUpload.cs</DependentUpon>
@@ -287,6 +314,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>5</VersionMajor>
@@ -296,9 +332,21 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <Content Include="Luong\blue.mp3" />
+    <Content Include="Luong\red.mp3" />
+    <Content Include="Luong\yellow.mp3" />
     <Content Include="old_logo %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +360,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
